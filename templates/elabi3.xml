@@ -1,0 +1,91 @@
+<templateSet group="elabi3">
+  <template name="region" value="&#10;/**************************************************************************&#10; *  $title$&#10; **************************************************************************/&#10;&#10;//region $title$&#10;&#10;&#10;//endregion" description="Region comment" toReformat="true" toShortenFQNames="true">
+    <variable name="title" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="singleton" value="&#10;private static final $class$ instance = new $class$();&#10;&#10;public static $class$ getInstance() {&#10;    return instance;&#10;}&#10;&#10;private $class$() {&#10;    &#10;}" toReformat="true" toShortenFQNames="true">
+    <variable name="class" expression="className()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="switch" value="&#10;switch ($value$) {&#10;    case $item$ :&#10;        break;&#10;    default:&#10;        break;    &#10;}" toReformat="true" toShortenFQNames="true">
+    <variable name="value" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="item" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+      <option name="JAVA_DECLARATION" value="false" />
+    </context>
+  </template>
+  <template name="method" value="&#10;$visibility$ $type$ $name$ ($parameters$) {&#10;    return $return$;&#10;}" toReformat="true" toShortenFQNames="true">
+    <variable name="visibility" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="type" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="parameters" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="return" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="tag" value="&#10;public final String TAG = $class$.class.getSimpleName();" toReformat="true" toShortenFQNames="true">
+    <variable name="class" expression="className()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="onClick" value="&#10;@Override&#10;public void onClick(android.view.View v) {&#10;    switch (v.getId()) {&#10;        case 0:&#10;        break;&#10;    }&#10;}" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="extra" value="&#10;public final static String EXTRA_$value$ = &quot;EXTRA_$value$&quot;;" toReformat="true" toShortenFQNames="true">
+    <variable name="value" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="asyncTask" value="&#10;private class $name$ extends android.os.AsyncTask&lt;$eType$, Void, $rType$&gt; {&#10;&#10;        @Override&#10;        protected void onPreExecute() {&#10;            super.onPreExecute();&#10;        }&#10;&#10;        @Override&#10;        protected $rType$ doInBackground($eType$... params) {&#10;            return null;&#10;        }&#10;&#10;        @Override&#10;        protected void onPostExecute($rType$ s) {&#10;            super.onPostExecute(s);&#10;        }&#10;}" toReformat="true" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="eType" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="rType" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="recycler" value="&#10;android.support.v7.widget.RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.$layout$);&#10;mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));&#10;mRecyclerView.setAdapter(new $adapter$());" toReformat="true" toShortenFQNames="true">
+    <variable name="layout" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="adapter" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+      <option name="JAVA_DECLARATION" value="false" />
+    </context>
+  </template>
+  <template name="singletonWith" value="&#10;    private static $class$ instance;&#10;    private android.content.Context mContext;&#10;    &#10;    public static $class$ with(android.content.Context ctx) {&#10;        if (instance == null) {&#10;            instance = new $class$(ctx);&#10;        }&#10;        return instance;&#10;    }&#10;&#10;    private $class$(android.content.Context ctx) {&#10;        this.mContext = ctx.getApplicationContext();&#10;    }&#10;    " toReformat="true" toShortenFQNames="true">
+    <variable name="class" expression="className()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_STATEMENT" value="false" />
+      <option name="JAVA_EXPRESSION" value="false" />
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="builder" value="&#10;    private int price;&#10;    private String name;&#10;    &#10;    public static class Builder {&#10;        private int price;&#10;        private String name;&#10;        &#10;        public Builder(String value) {&#10;            name = value;&#10;        }&#10;        &#10;        public Builder price(int value) {&#10;            price = value;&#10;            return this;&#10;        }&#10;        &#10;        public $class$ build() {&#10;            return new $class$(this);&#10;        }&#10;    }&#10;    &#10;    public $class$(Builder builder) {&#10;        price = builder.price;&#10;        name = builder.name;&#10;    }" toReformat="true" toShortenFQNames="true">
+    <variable name="class" expression="className()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="getLaunchActivity" value="&#10;     public static android.content.Intent getLaunchIntent(android.content.Context ctx) {&#10;            android.content.Intent intent = new android.content.Intent(ctx, $class$.class);&#10;            return intent;&#10;     }" toReformat="true" toShortenFQNames="true">
+    <variable name="class" expression="className()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="builderActivity" value="&#10;    private final static String EXTRA_TITLE = &quot;EXTRA_TITLE&quot;;&#10;    &#10;    public static class Builder {&#10;        private android.os.Bundle mExtras;&#10;        &#10;        public Builder() {&#10;            mExtras = new android.os.Bundle();&#10;        }&#10;&#10;        public Builder withTitle(String title) {&#10;            mExtras.putString(EXTRA_TITLE, title);&#10;            return this;&#10;        }&#10;        &#10;        public android.content.Intent build(android.content.Context ctx) {&#10;            android.content.Intent i = new Intent(ctx, $class$.class);&#10;            i.putExtras(mExtras);&#10;            return i;&#10;        }&#10;    }" toReformat="true" toShortenFQNames="true">
+    <variable name="class" expression="className()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+</templateSet>
