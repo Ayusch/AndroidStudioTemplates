@@ -9,7 +9,9 @@ Goals:
 # Installation
 
 Mac path:
+
 /Users/----/Library/Preferences/AndroidStudioXX.XX/
+
 Windows path:
 
 C:\Users\----\.AndroidStudioXX.XX\config\
