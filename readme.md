@@ -13,7 +13,7 @@ Download repository, copy all content into de Preferences folder of your current
 Path:
 
   - Mac: /Users/.../Library/Preferences/AndroidStudioXX.XX/
-  - Windows: C:\Users\...\.AndroidStudioXX.XX\config\
+  - Windows: C:\Users\\...\\.AndroidStudioXX.XX\config\
 
 # Author
 
