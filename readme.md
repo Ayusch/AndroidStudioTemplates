@@ -3,8 +3,10 @@
 Goals:
 
   - Logcat colors
-  - File Templates
-  - Templates
+  - Live Templates (Singleton, regions ...?)
+  - Code Templates (Activty, Fragment, RecyclerAdapter, Dialogs)
+  - Resources Templates (dimens, colors)
+  - Group Templates (MVP component, MVVM component)
 
 # Installation
 
